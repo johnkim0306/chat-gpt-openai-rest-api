@@ -25,9 +25,10 @@ export class ChatCompletionApiService {
         const result = await this.chat.predictMessages(
             this.chatHistory.chatHistory,
         );
+        console.log(result)
         const aiMessage = result.content;
+        console.log(aiMessage)
 
-        this.chatHistory.addAiMessage(aiMessage);
-        return GetChatCompletionAnswerOutputDTO.getInstance(aiMessage);
+
     }
 }
